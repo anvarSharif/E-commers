@@ -9,4 +9,8 @@ public class OrderRepo {
     public static List<Order> findAll(){
         return DB.orders;
     }
+
+    public static void save(Order order) {
+        DB.orders.add(order);
+    }
 }

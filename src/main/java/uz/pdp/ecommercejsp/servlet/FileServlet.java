@@ -20,7 +20,7 @@ public class FileServlet extends HttpServlet {
     static String absolutPathForGet = "C:/java/PDP java/7-modul-jsp/E-commerce-jsp/files/";
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws  IOException {
         String pathInfo = req.getPathInfo();
         String photoPath = pathInfo.split("/")[1];
         String url=absolutPathForGet+photoPath;
