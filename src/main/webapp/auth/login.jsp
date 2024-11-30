@@ -22,7 +22,7 @@
             <div class="mb-3">
                 <label for="password" class="form-label">Parol</label>
                 <input type="password" id="password" name="password_inp" class="form-control" placeholder="********"
-                       minlength="6" required>
+                       required>
             </div>
             <div class="d-grid mt-4">
                 <button type="submit" class="btn btn-dark btn-lg">Kirish</button>
