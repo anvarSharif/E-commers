@@ -13,4 +13,8 @@ public class UserRepo {
     public static User findById(Integer id){
         return DB.users.stream().filter(item->item.getId().equals(id)).findFirst().get();
     }
+
+    public static void save(User user) {
+        DB.users.add(user);
+    }
 }

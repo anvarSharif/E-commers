@@ -11,7 +11,7 @@
             <h3 class="text-dark">Login</h3>
             <p class="text-muted">Tizimga kirish uchun maʼlumotlarni kiriting</p>
         </div>
-        <form action="/login" method="post">
+        <form action="/auth/login" method="post">
             <div class="mb-3">
                 <label for="phone" class="form-label">Telefon raqami</label>
                 <div class="input-group">
@@ -28,8 +28,7 @@
                 <button type="submit" class="btn btn-dark btn-lg">Kirish</button>
             </div>
             <div class="text-center mt-3">
-                <p class="text-muted">Ro‘yxatdan o‘tmaganmisiz?
-                    <a href="/register.jsp" class="text-dark">Ro‘yxatdan o‘tish</a>
+                    <a href="/auth/register.jsp" class="text-dark">Ro‘yxatdan o‘tish</a>
                 </p>
             </div>
         </form>

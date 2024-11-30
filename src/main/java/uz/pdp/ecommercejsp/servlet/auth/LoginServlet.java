@@ -15,7 +15,7 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
-@WebServlet("/login")
+@WebServlet("/auth/login")
 public class LoginServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -33,7 +33,7 @@ public class LoginServlet extends HttpServlet {
                     resp.sendRedirect("/admin/category.jsp");
                 }
                 if (basket==null||basket.getMap().isEmpty()){
-                    resp.sendRedirect("home.jsp");
+                    resp.sendRedirect("/home.jsp");
                     return;
                 }
                 resp.sendRedirect("/basket.jsp");
