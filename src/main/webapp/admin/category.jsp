@@ -34,7 +34,7 @@
             </form>
             <div class="d-flex justify-content-between mb-3">
                 <h2>Category List</h2>
-                <form action="/admin/addCategory.jsp">
+                <form action="/admin/addOrUpdateCategory.jsp">
                     <button class="btn btn-success">Add Category</button>
                 </form>
             </div>
@@ -57,7 +57,7 @@
                                 <input type="hidden" name="categoryId" value="<%= category.getId() %>">
                                 <button class="btn btn-danger">Delete</button>
                             </form>
-                            <form action="addCategory.jsp" method="get">
+                            <form action="/admin/addOrUpdateCategory.jsp" method="get">
                                 <input type="hidden" name="categoryId" value="<%= category.getId() %>">
                                 <button class="btn btn-dark mx-2">Update</button>
                             </form>
