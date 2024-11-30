@@ -31,15 +31,16 @@ public class RegisterServlet extends HttpServlet {
                 return;
             }
             Part part = req.getPart("image");
-            Path path = Files.write(
+            Files.write(
                     Path.of(absolutPathForGet + part.getSubmittedFileName() + ".jpg"),
                     part.getInputStream().readAllBytes(),
                     StandardOpenOption.CREATE_NEW
             );
+            String photoPath=part.getSubmittedFileName() + ".jpg";
             User user = new User(
                     phoneInp,
                     passwordInp,
-                    path.toString()
+                    photoPath
             );
             UserRepo.save(user);
             resp.sendRedirect("/auth/login.jsp");

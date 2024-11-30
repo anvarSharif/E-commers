@@ -22,16 +22,20 @@ public class LoginServlet extends HttpServlet {
         String phoneInp = req.getParameter("phone_inp");
         if (phoneInp != null) {
             String passwordInp = req.getParameter("password_inp");
-            List<User> userList = UserRepo.findAll();
-            Optional<User> optionalUser = userList.stream().filter(item -> item.getPassword().equals(passwordInp) && item.getPhone().equals(phoneInp)).findFirst();
+            Optional<User> optionalUser = UserRepo.findAll().stream()
+                    .filter(item -> item.getPassword().equals(passwordInp)
+                            && item.getPhone().equals(phoneInp)).findFirst();
             if (optionalUser.isPresent()) {
+                User currentUser = optionalUser.get();
                 HttpSession session = req.getSession();
-                User user = optionalUser.get();
-                session.setAttribute("user",user);
+                session.setAttribute("user",currentUser);
                 Basket basket = (Basket) session.getAttribute("basket");
-                if (user.getRole().equals(Role.ADMIN)){
+
+                if (currentUser.getRole().equals(Role.ADMIN)){
                     resp.sendRedirect("/admin/category.jsp");
+                    return;
                 }
+
                 if (basket==null||basket.getMap().isEmpty()){
                     resp.sendRedirect("/home.jsp");
                     return;
@@ -39,8 +43,7 @@ public class LoginServlet extends HttpServlet {
                 resp.sendRedirect("/basket.jsp");
                 return;
             }
-            resp.sendRedirect("/auth/login.jsp");
         }
-
+        resp.sendRedirect("/auth/login.jsp");
     }
 }
