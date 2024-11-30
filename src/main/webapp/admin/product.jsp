@@ -32,7 +32,7 @@
             </form>
             <div class="d-flex justify-content-between mb-3">
                 <h2>Category List</h2>
-                <form action="/admin/addProduct.jsp">
+                <form action="/admin/addOrUpdateProduct.jsp">
                     <button class="btn btn-success my-1 justify-content-end">
                         Add Product
                     </button>
@@ -67,7 +67,7 @@
                                 <input type="hidden" name="productId" value="<%= product.getId() %>">
                                 <button class="btn btn-danger">Delete</button>
                             </form>
-                            <form action="addProduct.jsp" method="get">
+                            <form action="/admin/addOrUpdateProduct.jsp" method="get">
                                 <input type="hidden" name="productId" value="<%= product.getId() %>">
                                 <button class="btn btn-dark">Update</button>
                             </form>
