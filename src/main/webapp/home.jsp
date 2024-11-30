@@ -34,12 +34,12 @@
         <a class="navbar-brand" href="/home.jsp">Online Shop</a>
         <div class="d-flex">
             <% if (user != null) { %>
-            <a href="order.jsp" class="btn btn-outline-light me-2">My Orders</a>
+            <a href="order.jsp" class="btn btn-outline-light mx-5">My Orders</a>
             <form action="/auth/logout" method="post">
-                <button class="btn btn-danger me-2">Logout</button>
+                <button class="btn btn-danger mx-5">Logout</button>
             </form>
             <div class="d-flex align-items-center">
-                <img src="/user/file/<%= user.getId() %>" height="40" width="40" class="rounded-circle me-2" alt="User">
+                <img src="file/<%= user.getPhotoUrl() %>" height="40" width="40" class="rounded-circle me-2" alt="User">
                 <span class="text-white"><%= user.getPhone() %></span>
             </div>
             <% } else { %>
@@ -108,6 +108,10 @@
         </div>
     </div>
 </div>
+
+<footer class="text-center mt-5 text-muted">
+    <p>&copy; 2024.11.30 My E-commerce</p>
+</footer>
 
 </body>
 </html>
