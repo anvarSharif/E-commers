@@ -14,4 +14,8 @@ public class ProductRepo {
     public static Product findById(Integer id){
         return DB.products.stream().filter(item->item.getId().equals(id)).findFirst().get();
     }
+
+    public static void deleteById(Integer categoryId) {
+        DB.products.removeIf(item->item.getId().equals(categoryId));
+    }
 }
